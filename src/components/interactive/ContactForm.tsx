@@ -8,7 +8,7 @@ import { Textarea } from '../ui/Textarea';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
+  email: z.string().email(),
   subject: z.string().min(5, 'Subject must be at least 5 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
@@ -42,9 +42,9 @@ export function ContactForm(props: Props) {
     const result = contactSchema.safeParse(data);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((error) => {
-        const field = error.path[0] as string;
-        fieldErrors[field] = error.message;
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0] as string;
+        fieldErrors[field] = issue.message;
       });
       setErrors(fieldErrors);
       return;
@@ -63,7 +63,7 @@ export function ContactForm(props: Props) {
 
       setSubmitStatus('success');
       form.reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setErrorMessage(t('contact.form.error'));
     }

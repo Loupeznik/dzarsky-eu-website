@@ -18,9 +18,26 @@
       "correctness": {
         "noUnusedVariables": "warn",
         "noUnusedImports": "warn"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "noLabelWithoutControl": "off"
       }
     }
   },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ],
   "formatter": {
     "enabled": true,
     "indentStyle": "space",

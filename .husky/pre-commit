@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-commit hooks..."
+
+echo "1. Running linter..."
+pnpm lint:check || {
+  echo "❌ Linting failed. Please fix the issues and try again."
+  exit 1
+}
+
+echo "2. Running TypeScript type check..."
+pnpm astro check || {
+  echo "❌ TypeScript type check failed. Please fix the issues and try again."
+  exit 1
+}
+
+echo "3. Running tests..."
+pnpm test || {
+  echo "❌ Tests failed. Please fix the tests and try again."
+  exit 1
+}
+
+echo "✅ All pre-commit checks passed!"

@@ -18,6 +18,7 @@ export function EmailIcon(props: IconProps) {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+      aria-hidden="true"
       {...props}
     >
       <rect x="2" y="4" width="20" height="16" rx="2" />
