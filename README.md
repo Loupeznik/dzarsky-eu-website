@@ -1,43 +1,130 @@
-# Astro Starter Kit: Minimal
+# Personal Portfolio Website
 
-```sh
-pnpm create astro@latest -- --template minimal
+A modern, SEO-friendly personal portfolio website built with Astro 5 and SolidJS.
+
+## Tech Stack
+
+- **Framework:** Astro 5.16.5
+- **UI Library:** SolidJS 1.9
+- **Styling:** Tailwind CSS 4
+- **Form Validation:** Zod
+- **Testing:** Playwright
+- **CI/CD:** GitHub Actions
+- **Deployment:** Docker + GitHub Container Registry
+
+## Features
+
+- SEO-optimized with structured data and meta tags
+- Fully responsive design (mobile, tablet, desktop)
+- Modern dark theme
+- Strongly typed with TypeScript
+- Interactive contact form with Azure Function integration
+- Smooth scrolling navigation
+- End-to-end testing with Playwright
+- Containerized with Docker
+- Automated CI/CD pipeline
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   ├── ui/                  # UI components (Button, Card, Input, etc.)
+│   │   ├── sections/            # Page sections (Hero, Skills, Projects, etc.)
+│   │   ├── interactive/         # SolidJS components (ContactForm)
+│   │   └── layout/              # Layout components (Nav, Footer, BaseHead)
+│   ├── layouts/                 # Page layouts
+│   ├── pages/                   # Astro pages
+│   ├── config/                  # Configuration and data
+│   ├── types/                   # TypeScript type definitions
+│   ├── lib/                     # Utility functions
+│   └── styles/                  # Global styles
+├── public/                      # Static assets
+├── tests/                       # E2E tests
+├── Dockerfile                   # Docker configuration
+├── nginx.conf                   # Nginx configuration
+└── playwright.config.ts         # Playwright configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerequisites
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Node.js 20.11.1 or later
+- pnpm 9.0.4 or later
 
-## 🧞 Commands
+### Installation
 
-All commands are run from the root of the project, from a terminal:
+1. Clone the repository
+2. Install dependencies: `pnpm install`
+3. Copy `.env.example` to `.env` and update the Azure Function URL
+4. Start the dev server: `pnpm dev`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+The site will be available at http://localhost:4321
 
-## 👀 Want to learn more?
+### Development
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+pnpm dev          # Start development server
+pnpm build        # Build for production
+pnpm preview      # Preview production build
+```
+
+## Testing
+
+```bash
+pnpm build        # Build first
+pnpm test         # Run E2E tests
+pnpm test:ui      # Run tests in UI mode
+pnpm test:debug   # Debug tests
+```
+
+## Code Quality
+
+```bash
+pnpm lint:check   # Check code
+pnpm lint         # Auto-fix issues
+pnpm format       # Format code
+```
+
+## Docker
+
+```bash
+pnpm docker:build # Build Docker image
+pnpm docker:run   # Run Docker container
+```
+
+The site will be available at http://localhost:8080
+
+## Deployment
+
+The project uses GitHub Actions for CI/CD:
+- Runs linting and tests on all PRs and pushes
+- Builds and pushes Docker image to ghcr.io on master branch
+
+## Customization
+
+Update site content in configuration files:
+- `src/config/site.ts` - Site metadata and social links
+- `src/config/skills.ts` - Skills and technologies
+- `src/config/work.ts` - Work experience
+- `src/config/projects.ts` - Projects showcase
+- `src/config/contact.ts` - Contact availability
+
+## Scripts Reference
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Lint and auto-fix code
+- `pnpm lint:check` - Check code without fixing
+- `pnpm format` - Format code with Biome
+- `pnpm test` - Run E2E tests
+- `pnpm test:ui` - Run tests in UI mode
+- `pnpm test:debug` - Debug tests
+- `pnpm docker:build` - Build Docker image
+- `pnpm docker:run` - Run Docker container
+
+## License
+
+MIT
