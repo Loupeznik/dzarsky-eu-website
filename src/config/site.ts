@@ -5,8 +5,8 @@ export const siteConfig = {
   url: 'https://dzarsky.eu',
   ogImage: '/og-image.png',
   social: {
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
+    github: 'https://github.com/loupeznik',
+    linkedin: 'https://www.linkedin.com/in/dominik-zarsky/',
     email: 'contact@dzarsky.eu',
   },
   author: {

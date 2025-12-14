@@ -8,5 +8,5 @@ export interface WorkExperience {
   highlights: string[];
   technologies: string[];
   description: string;
-  companyUrl?: string;
+  notableExperiences?: string[];
 }

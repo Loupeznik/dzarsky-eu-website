@@ -25,19 +25,7 @@ function formatDate(date: Date | 'present'): string {
                 <div>
                   <CardTitle>{work.title}</CardTitle>
                   <CardDescription>
-                    {work.companyUrl ? (
-                      <a
-                        href={work.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-foreground transition-colors"
-                      >
-                        {work.company}
-                      </a>
-                    ) : (
-                      work.company
-                    )}{' '}
-                    • {work.location}
+                    {work.company} • {work.location}
                   </CardDescription>
                 </div>
                 <div class="text-sm text-muted-foreground">
@@ -52,6 +40,16 @@ function formatDate(date: Date | 'present'): string {
                   <li class="text-muted-foreground">{highlight}</li>
                 ))}
               </ul>
+              {work.notableExperiences && work.notableExperiences.length > 0 && (
+                <div class="mb-4">
+                  <h4 class="text-sm font-semibold mb-2">Notable Experiences</h4>
+                  <ul class="list-disc list-inside space-y-1 text-sm">
+                    {work.notableExperiences.map((experience) => (
+                      <li class="text-muted-foreground">{experience}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div class="flex flex-wrap gap-2">
                 {work.technologies.map((tech) => (
                   <span class="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">

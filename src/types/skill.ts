@@ -4,6 +4,5 @@ export interface Skill {
   logo: string;
   yearsOfExperience: number;
   category: 'language' | 'framework' | 'tool' | 'cloud';
-  proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   projectLink?: string;
 }

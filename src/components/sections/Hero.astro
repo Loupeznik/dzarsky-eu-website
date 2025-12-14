@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from '../../config/site';
 import { t } from '../../lib/i18n';
-import { EmailIcon, GithubIcon, LinkedinIcon } from '../icons';
+import { DownloadIcon, EmailIcon, GithubIcon, LinkedinIcon } from '../icons';
 import { Button } from '../ui/Button';
 ---
 
@@ -35,6 +35,12 @@ import { Button } from '../ui/Button';
             <Button variant="outline" size="lg">
               <EmailIcon class="mr-2" client:load />
               Email
+            </Button>
+          </a>
+          <a href="/cv.pdf" download class="cursor-pointer inline-block">
+            <Button variant="outline" size="lg">
+              <DownloadIcon class="mr-2" client:load />
+              CV
             </Button>
           </a>
         </div>
