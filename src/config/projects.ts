@@ -21,7 +21,8 @@ export const projects: Project[] = [
     id: 'project-2',
     name: 'Task Management App',
     slug: 'task-management',
-    description: 'A collaborative task management application with real-time updates and team features',
+    description:
+      'A collaborative task management application with real-time updates and team features',
     longDescription:
       'Developed a Kanban-style task management tool with real-time collaboration features. Users can create boards, organize tasks, assign team members, and track progress.',
     image: '/images/projects/task-app.png',
@@ -36,7 +37,8 @@ export const projects: Project[] = [
     id: 'project-3',
     name: 'Weather Dashboard',
     slug: 'weather-dashboard',
-    description: 'A beautiful weather dashboard with forecasts, maps, and historical data visualization',
+    description:
+      'A beautiful weather dashboard with forecasts, maps, and historical data visualization',
     technologies: ['javascript', 'react'],
     githubUrl: 'https://github.com/yourusername/weather-dashboard',
     featured: true,

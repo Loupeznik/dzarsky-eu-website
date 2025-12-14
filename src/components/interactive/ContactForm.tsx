@@ -1,10 +1,10 @@
 import { createSignal, Show } from 'solid-js';
 import { z } from 'zod';
+import { t } from '../../lib/i18n';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
-import { Textarea } from '../ui/Textarea';
 import { Label } from '../ui/Label';
-import { t } from '../../lib/i18n';
+import { Textarea } from '../ui/Textarea';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -20,9 +20,9 @@ interface Props {
 }
 
 export function ContactForm(props: Props) {
-  const [submitStatus, setSubmitStatus] = createSignal<
-    'idle' | 'loading' | 'success' | 'error'
-  >('idle');
+  const [submitStatus, setSubmitStatus] = createSignal<'idle' | 'loading' | 'success' | 'error'>(
+    'idle'
+  );
   const [errorMessage, setErrorMessage] = createSignal('');
   const [errors, setErrors] = createSignal<Record<string, string>>({});
 
@@ -82,13 +82,7 @@ export function ContactForm(props: Props) {
 
         <div>
           <Label for="email">{t('contact.form.email')}</Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="john@example.com"
-            required
-          />
+          <Input type="email" id="email" name="email" placeholder="john@example.com" required />
           <Show when={errors().email}>
             <span class="text-sm text-destructive">{errors().email}</span>
           </Show>
@@ -96,13 +90,7 @@ export function ContactForm(props: Props) {
 
         <div>
           <Label for="subject">{t('contact.form.subject')}</Label>
-          <Input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Project inquiry"
-            required
-          />
+          <Input type="text" id="subject" name="subject" placeholder="Project inquiry" required />
           <Show when={errors().subject}>
             <span class="text-sm text-destructive">{errors().subject}</span>
           </Show>

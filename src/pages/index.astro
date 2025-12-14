@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/sections/Contact.astro';
 import Hero from '../components/sections/Hero.astro';
+import Projects from '../components/sections/Projects.astro';
 import Skills from '../components/sections/Skills.astro';
 import WorkExperience from '../components/sections/WorkExperience.astro';
-import Projects from '../components/sections/Projects.astro';
-import Contact from '../components/sections/Contact.astro';
-import { generateWebsiteSchema, generatePersonSchema } from '../lib/seo';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { generatePersonSchema, generateWebsiteSchema } from '../lib/seo';
 
 const structuredData = {
   '@context': 'https://schema.org',

@@ -25,12 +25,15 @@
   }
 
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -39,5 +42,6 @@ html {
 }
 
 section {
-  @apply min-h-screen py-20 px-4;
+  min-height: 100vh;
+  padding: 5rem 1rem;
 }

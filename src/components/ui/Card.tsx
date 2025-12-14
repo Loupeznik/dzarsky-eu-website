@@ -1,4 +1,4 @@
-import { JSX, splitProps } from 'solid-js';
+import { type JSX, splitProps } from 'solid-js';
 import { cn } from '../../lib/utils';
 
 type CardProps = JSX.HTMLAttributes<HTMLDivElement>;
@@ -31,10 +31,7 @@ type CardTitleProps = JSX.HTMLAttributes<HTMLHeadingElement>;
 export function CardTitle(props: CardTitleProps) {
   const [local, others] = splitProps(props, ['class', 'children']);
   return (
-    <h3
-      class={cn('text-2xl font-semibold leading-none tracking-tight', local.class)}
-      {...others}
-    >
+    <h3 class={cn('text-2xl font-semibold leading-none tracking-tight', local.class)} {...others}>
       {local.children}
     </h3>
   );

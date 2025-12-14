@@ -1,18 +1,23 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.0/schema.json",
-  "organizeImports": {
-    "enabled": true
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "style": {
-        "useConst": "error",
-        "noVar": "error"
+        "useConst": "error"
       },
       "suspicious": {
         "noExplicitAny": "warn"
+      },
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "noUnusedImports": "warn"
       }
     }
   },
@@ -25,10 +30,7 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingComma": "es5"
+      "trailingCommas": "es5"
     }
-  },
-  "files": {
-    "ignore": ["node_modules", "dist", ".astro", "pnpm-lock.yaml"]
   }
 }
