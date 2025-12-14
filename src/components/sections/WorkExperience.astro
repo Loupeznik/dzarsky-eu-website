@@ -1,0 +1,68 @@
+---
+import { workExperiences } from '../../config/work';
+import { t } from '../../lib/i18n';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/Card';
+
+function formatDate(date: Date | 'present'): string {
+  if (date === 'present') {
+    return t('experience.present');
+  }
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+---
+
+<section id="experience" class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+      {t('experience.title')}
+    </h2>
+    <div class="max-w-4xl mx-auto space-y-6">
+      {
+        workExperiences.map((work) => (
+          <Card>
+            <CardHeader>
+              <div class="flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <CardTitle>{work.title}</CardTitle>
+                  <CardDescription>
+                    {work.companyUrl ? (
+                      <a
+                        href={work.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-foreground transition-colors"
+                      >
+                        {work.company}
+                      </a>
+                    ) : (
+                      work.company
+                    )}{' '}
+                    • {work.location}
+                  </CardDescription>
+                </div>
+                <div class="text-sm text-muted-foreground">
+                  {formatDate(work.startDate)} - {formatDate(work.endDate)}
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p class="text-muted-foreground mb-4">{work.description}</p>
+              <ul class="list-disc list-inside space-y-1 mb-4 text-sm">
+                {work.highlights.map((highlight) => (
+                  <li class="text-muted-foreground">{highlight}</li>
+                ))}
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                {work.technologies.map((tech) => (
+                  <span class="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

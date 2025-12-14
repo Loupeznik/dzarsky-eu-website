@@ -1,0 +1,114 @@
+---
+import { skillsByCategory } from '../../config/skills';
+import { t } from '../../lib/i18n';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
+---
+
+<section id="skills" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+      {t('skills.title')}
+    </h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      <Card>
+        <CardHeader>
+          <CardTitle>{t('skills.languages')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4">
+            {
+              skillsByCategory.languages.map((skill) => (
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                    <span class="text-2xl">{skill.name.charAt(0)}</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold">{skill.name}</h3>
+                    <p class="text-sm text-muted-foreground">
+                      {skill.yearsOfExperience} {t('skills.years')} • {skill.proficiency}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{t('skills.frameworks')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4">
+            {
+              skillsByCategory.frameworks.map((skill) => (
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                    <span class="text-2xl">{skill.name.charAt(0)}</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold">{skill.name}</h3>
+                    <p class="text-sm text-muted-foreground">
+                      {skill.yearsOfExperience} {t('skills.years')} • {skill.proficiency}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{t('skills.tools')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4">
+            {
+              skillsByCategory.tools.map((skill) => (
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                    <span class="text-2xl">{skill.name.charAt(0)}</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold">{skill.name}</h3>
+                    <p class="text-sm text-muted-foreground">
+                      {skill.yearsOfExperience} {t('skills.years')} • {skill.proficiency}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{t('skills.cloud')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4">
+            {
+              skillsByCategory.cloud.map((skill) => (
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                    <span class="text-2xl">{skill.name.charAt(0)}</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold">{skill.name}</h3>
+                    <p class="text-sm text-muted-foreground">
+                      {skill.yearsOfExperience} {t('skills.years')} • {skill.proficiency}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
