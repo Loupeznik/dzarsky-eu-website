@@ -17,8 +17,8 @@ import { Button } from '../ui/Button';
         {t('hero.description')}
       </p>
       <div class="flex flex-wrap gap-4 justify-center pt-4">
-        <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">
-          <Button size="lg">
+        <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-block">
+          <Button variant="outline" size="lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -39,7 +39,7 @@ import { Button } from '../ui/Button';
             GitHub
           </Button>
         </a>
-        <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">
+        <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-block">
           <Button variant="outline" size="lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ import { Button } from '../ui/Button';
             LinkedIn
           </Button>
         </a>
-        <a href={`mailto:${siteConfig.social.email}`}>
+        <a href={`mailto:${siteConfig.social.email}`} class="cursor-pointer inline-block">
           <Button variant="outline" size="lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
