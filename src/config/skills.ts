@@ -1,0 +1,91 @@
+import type { Skill } from '../types/skill';
+
+export const skills: Skill[] = [
+  {
+    id: 'typescript',
+    name: 'TypeScript',
+    logo: '/images/logos/typescript.svg',
+    yearsOfExperience: 5,
+    category: 'language',
+    proficiency: 'expert',
+  },
+  {
+    id: 'javascript',
+    name: 'JavaScript',
+    logo: '/images/logos/javascript.svg',
+    yearsOfExperience: 7,
+    category: 'language',
+    proficiency: 'expert',
+  },
+  {
+    id: 'python',
+    name: 'Python',
+    logo: '/images/logos/python.svg',
+    yearsOfExperience: 4,
+    category: 'language',
+    proficiency: 'advanced',
+  },
+  {
+    id: 'react',
+    name: 'React',
+    logo: '/images/logos/react.svg',
+    yearsOfExperience: 5,
+    category: 'framework',
+    proficiency: 'expert',
+  },
+  {
+    id: 'astro',
+    name: 'Astro',
+    logo: '/images/logos/astro.svg',
+    yearsOfExperience: 2,
+    category: 'framework',
+    proficiency: 'advanced',
+  },
+  {
+    id: 'solidjs',
+    name: 'SolidJS',
+    logo: '/images/logos/solidjs.svg',
+    yearsOfExperience: 1,
+    category: 'framework',
+    proficiency: 'intermediate',
+  },
+  {
+    id: 'docker',
+    name: 'Docker',
+    logo: '/images/logos/docker.svg',
+    yearsOfExperience: 4,
+    category: 'tool',
+    proficiency: 'advanced',
+  },
+  {
+    id: 'kubernetes',
+    name: 'Kubernetes',
+    logo: '/images/logos/kubernetes.svg',
+    yearsOfExperience: 3,
+    category: 'cloud',
+    proficiency: 'advanced',
+  },
+  {
+    id: 'azure',
+    name: 'Azure',
+    logo: '/images/logos/azure.svg',
+    yearsOfExperience: 4,
+    category: 'cloud',
+    proficiency: 'advanced',
+  },
+  {
+    id: 'git',
+    name: 'Git',
+    logo: '/images/logos/git.svg',
+    yearsOfExperience: 7,
+    category: 'tool',
+    proficiency: 'expert',
+  },
+];
+
+export const skillsByCategory = {
+  languages: skills.filter((s) => s.category === 'language'),
+  frameworks: skills.filter((s) => s.category === 'framework'),
+  tools: skills.filter((s) => s.category === 'tool'),
+  cloud: skills.filter((s) => s.category === 'cloud'),
+};
