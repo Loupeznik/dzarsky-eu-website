@@ -8,7 +8,9 @@ A modern, SEO-friendly personal portfolio website built with Astro 5 and SolidJS
 - **UI Library:** SolidJS 1.9
 - **Styling:** Tailwind CSS 4
 - **Form Validation:** Zod
+- **Code Quality:** Biome (linting & formatting)
 - **Testing:** Playwright
+- **Pre-commit Hooks:** Husky
 - **CI/CD:** GitHub Actions
 - **Deployment:** Docker + GitHub Container Registry
 
@@ -81,11 +83,24 @@ pnpm test:debug   # Debug tests
 
 ## Code Quality
 
+This project uses Biome for linting and formatting, along with Husky for pre-commit hooks.
+
 ```bash
-pnpm lint:check   # Check code
+pnpm lint:check   # Check code with Biome
 pnpm lint         # Auto-fix issues
 pnpm format       # Format code
+pnpm astro check  # TypeScript type checking
 ```
+
+### Pre-commit Hooks
+
+Pre-commit hooks are automatically installed via Husky when you run `pnpm install`. Before each commit, the following checks run:
+
+1. **Biome linting** - Ensures code quality and style consistency
+2. **TypeScript type checking** - Validates types across the codebase
+3. **Playwright tests** - Runs E2E tests to ensure functionality
+
+If any check fails, the commit will be blocked. Fix the issues and try again.
 
 ## Docker
 
