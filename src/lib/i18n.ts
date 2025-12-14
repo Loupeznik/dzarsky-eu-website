@@ -23,6 +23,7 @@ export const translations: Translations = {
   'hero.description': {
     en: 'I build modern web applications with focus on performance and user experience',
   },
+  'hero.getInTouch': { en: 'Get in Touch' },
   'skills.title': { en: 'Skills & Technologies' },
   'skills.languages': { en: 'Languages' },
   'skills.frameworks': { en: 'Frameworks' },
