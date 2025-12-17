@@ -7,10 +7,9 @@ import { Label } from '../ui/Label';
 import { Textarea } from '../ui/Textarea';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  full_name: z.string().min(5, 'Name must be at least 5 characters'),
   email: z.string().email(),
-  subject: z.string().min(5, 'Subject must be at least 5 characters'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  message: z.string().min(15, 'Message must be at least 15 characters'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -33,9 +32,8 @@ export function ContactForm(props: Props) {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const data: ContactFormData = {
-      name: formData.get('name') as string,
+      full_name: formData.get('full_name') as string,
       email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
       message: formData.get('message') as string,
     };
 
@@ -73,10 +71,10 @@ export function ContactForm(props: Props) {
     <form onSubmit={handleSubmit}>
       <div class="space-y-4">
         <div>
-          <Label for="name">{t('contact.form.name')}</Label>
-          <Input type="text" id="name" name="name" placeholder="John Doe" required />
-          <Show when={errors().name}>
-            <span class="text-sm text-destructive">{errors().name}</span>
+          <Label for="full_name">{t('contact.form.name')}</Label>
+          <Input type="text" id="full_name" name="full_name" placeholder="John Doe" required />
+          <Show when={errors().full_name}>
+            <span class="text-sm text-destructive">{errors().full_name}</span>
           </Show>
         </div>
 
@@ -85,14 +83,6 @@ export function ContactForm(props: Props) {
           <Input type="email" id="email" name="email" placeholder="john@example.com" required />
           <Show when={errors().email}>
             <span class="text-sm text-destructive">{errors().email}</span>
-          </Show>
-        </div>
-
-        <div>
-          <Label for="subject">{t('contact.form.subject')}</Label>
-          <Input type="text" id="subject" name="subject" placeholder="Project inquiry" required />
-          <Show when={errors().subject}>
-            <span class="text-sm text-destructive">{errors().subject}</span>
           </Show>
         </div>
 
