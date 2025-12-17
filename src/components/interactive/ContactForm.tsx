@@ -8,7 +8,7 @@ import { Textarea } from '../ui/Textarea';
 
 const contactSchema = z.object({
   full_name: z.string().min(5, 'Name must be at least 5 characters'),
-  email: z.string().email(),
+  email: z.email(),
   message: z.string().min(15, 'Message must be at least 15 characters'),
 });
 

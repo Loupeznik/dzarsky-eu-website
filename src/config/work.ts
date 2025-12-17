@@ -21,7 +21,7 @@ export const workExperiences: WorkExperience[] = [
       'Implementing logging and monitoring solutions for cloud-native applications and infrastructure components (Prometheus, Grafana, OTLP, ELK, Application Insights)',
       'Streamlining development workflows and deployment strategies',
       'Implementing DevOps best practices across the organization',
-      'Installing and managing virtual servers on Linux OS',
+      'Installing and managing linux-based virtual servers (Ubuntu, AlmaLinux)',
     ],
     technologies: [
       'csharp',

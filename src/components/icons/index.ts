@@ -1,3 +1,4 @@
+export { ChevronLeftIcon } from './ChevronLeftIcon';
 export { DownloadIcon } from './DownloadIcon';
 export { EmailIcon } from './EmailIcon';
 export { ExternalLinkIcon } from './ExternalLinkIcon';
